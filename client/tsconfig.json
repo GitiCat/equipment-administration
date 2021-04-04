@@ -1,0 +1,17 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "outDir": "./dist",
+        "target": "ES6",
+        "module": "CommonJS",
+        "lib": ["ES6", "DOM"],
+        "allowJs": true,
+        "strict": true,
+        "jsx": "react",
+        "esModuleInterop": true,
+        "removeComments": true,
+    },
+    "exclude": [
+        "./node_modules/**/*"
+    ]
+}
