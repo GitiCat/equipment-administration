@@ -13,12 +13,18 @@ button {
     }
 }
 
+a {
+    border: none;
+    text-decoration: none;
+}
+
 html,
 body {
     position: relative;
     width: 100%;
     height: 100vh;
     font-family: "RobotoRegular", sans-serif;
+    box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.75);
 }
 
 .root {
@@ -50,8 +56,8 @@ body {
             bottom: 0;
             left: 0;
             right: 0;
-            background-color: #fff;
-            opacity: .9;
+            background-color: rgb(236, 236, 236);
+            opacity: .95;
             z-index: -1;
         }
 
@@ -61,6 +67,7 @@ body {
             justify-content: flex-start;
             align-items: flex-start;
             padding: 16px 18px;
+            margin: 0 0 42px;
             z-index: 1;
 
             & > button {
@@ -86,10 +93,95 @@ body {
                 margin-right: 0;
             }
         }
+
+        .menu-bar--navigation-panel {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            & > span {
+                font-family: inherit;
+                font-size: 14px;
+                line-height: 1.5;
+                color: rgb(117, 128, 149);
+                margin-left: 42px;
+                margin-bottom: 24px;
+            }
+
+            & > .menu-bar--navigation-panel__item {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0 42px;
+                padding-right: 72px;
+                margin: 0 0 22px;
+
+                &, &:before, & > svg, & > span {
+                    transition: all .3s ease;
+                }
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    height: 27px;
+                    width: 3px;
+                    background-color: $selected-menu-items-color;
+                    border-radius: 0 4px 4px 0;
+                    opacity: 0;
+                }
+
+                &.current {
+                    & > svg,
+                    & > span {
+                        color: $selected-menu-items-color;
+                    }
+
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+
+                & > svg {
+                    font-size: 1.25rem;
+                    color: $menu-items-color;
+                    margin-right: 14px;
+                }
+
+                & > span {
+                    font-family: "RobotoRegular", sans-serif;
+                    font-size: 0.85rem;
+                    color: $menu-items-color;
+                }
+            }
+        }
     }
 
-    & > .content-container {
-        background-color: #fff;
+    & > .main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: stretch;
         width: 100%;
+        height: inherit;
+
+        .title-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        & > .content-container {
+            background-color: #fff;
+            width: 100%;
+            height: inherit;
+        }
     }
 }

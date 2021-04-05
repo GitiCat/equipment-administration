@@ -1,5 +1,6 @@
 import React from 'react'
 import * as electron from 'electron'
+import NavigationPanel from '../components/navigation-panel'
 
 const { BrowserWindow } = require('electron').remote
 
@@ -34,9 +35,15 @@ const WindowFrame: React.FunctionComponent = (props) => {
                     <button type="button" name="hide-window" 
                         onClick={(e) => hideWindowButtonEvent(mainWindow)}></button>
                 </div>
+                <NavigationPanel/>
             </div>
-            <div className="content-container">
-                {props.children}
+            <div className="main">
+                <div className="title-bar">
+                    
+                </div>
+                <div className="content-container">
+                    {props.children}
+                </div>
             </div>
         </div>
     )
