@@ -1,0 +1,75 @@
+.shedules-calendar-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: inherit;
+
+    .calendar-container {
+        position: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: inherit;
+        padding: 32px;
+        background-color: rgb(93, 96, 110);
+
+        .calendar-header-container {
+            position: inherit;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 0 32px;
+
+            & > button {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                border: none;
+                border-radius: 100%;
+                cursor: pointer;
+
+                & > svg {
+                    color: #fff;
+                    width: 16px;
+                    height: 16px;
+                    transition: all .3s ease;
+                }
+
+                &:hover > svg {
+                    opacity: .65;
+                }
+
+                &:first-child {
+                    margin-right: 52px;
+                }
+
+                &:last-child {
+                    margin-left: 52px;
+                }
+            }
+
+            & > span {
+                color: #fff;
+                font-size: 14px;
+                letter-spacing: -.03em;
+            }
+        }
+
+        & > hr {
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #50535F;
+            border: none;
+            border-radius: 4px;
+            margin: 0 0 16px;
+        }
+    }
+}

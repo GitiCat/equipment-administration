@@ -170,12 +170,14 @@ body {
         width: 100%;
         height: inherit;
 
-        .title-bar {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
+        & > .title-bar {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            left: 4px;
+            height: 20px;
+            -webkit-app-region: drag;
+            z-index: 1;
         }
         
         & > .content-container {
@@ -185,3 +187,5 @@ body {
         }
     }
 }
+
+@import '../../src/app/pages/shedules-calendar/shedules-calendar-style.scss'

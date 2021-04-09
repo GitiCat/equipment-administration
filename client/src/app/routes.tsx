@@ -7,6 +7,7 @@ const AppRoutes: React.FunctionComponent = () => {
         <React.Fragment>
             <ProtectedRoute exact={true} path='/' component={Pages.HomePage}/>
             <ProtectedRoute exact={true} path='/tasks' component={Pages.TasksPage}/>
+            <ProtectedRoute exact={true} path='/calendar' component={Pages.ShedulerCalendarPage}/>
         </React.Fragment>
     )
 }
